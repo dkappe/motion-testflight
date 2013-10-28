@@ -77,7 +77,7 @@ if Object.const_defined?('TestFlight') and !UIDevice.currentDevice.model.include
 end
 EOF
     launcher_file = './app/testflight_launcher.rb'
-    if !File.exist?(launcher_file) or File.read(launcher_file) != launcher_code
+    if !File.exist?(launcher_file)
       File.open(launcher_file, 'w') { |io| io.write(launcher_code) }
     end
     files = @config.files.flatten
